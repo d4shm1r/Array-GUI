@@ -34,6 +34,7 @@ namespace Array_GUI {
             this.sortArray11 = new Array_GUI.sortArray1();
             this.insertArray11 = new Array_GUI.InsertArray1();
             this.createArray11 = new Array_GUI.CreateArray1();
+            this.removeArray11 = new Array_GUI.RemoveArray1();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,11 +128,19 @@ namespace Array_GUI {
             this.createArray11.Size = new System.Drawing.Size(596, 359);
             this.createArray11.TabIndex = 3;
             // 
+            // removeArray11
+            // 
+            this.removeArray11.Location = new System.Drawing.Point(192, 79);
+            this.removeArray11.Name = "removeArray11";
+            this.removeArray11.Size = new System.Drawing.Size(596, 359);
+            this.removeArray11.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.removeArray11);
             this.Controls.Add(this.sortArray11);
             this.Controls.Add(this.insertArray11);
             this.Controls.Add(this.createArray11);
@@ -160,6 +169,7 @@ namespace Array_GUI {
         private CreateArray1 createArray11;
         private InsertArray1 insertArray11;
         private sortArray1 sortArray11;
+        private RemoveArray1 removeArray11;
     }
 }
 
