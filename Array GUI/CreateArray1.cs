@@ -48,9 +48,11 @@ namespace Array_GUI {
                 string ArrayText = textBox1.Text;
                 int[] arr = ArrayText.Split(',').Select(int.Parse).ToArray();
 
-                // Output to the textbox in the form1 window
+                // Output to the textBox1-Form1
                 TextBox myForm1TextBox = (ParentForm.Controls["textBox1"] as TextBox);
                 myForm1TextBox.Text = string.Join(",", arr);
+
+                // Clear the textBox1-CreateArray1
                 textBox1.Text = string.Empty;
             }
 
@@ -60,13 +62,21 @@ namespace Array_GUI {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            // Convert Input to array of integers and add to the listbox
-            string ValueText = numericUpDown1.Text;
-            int arrItem = Convert.ToInt32(ValueText);
-            listBox1.Items.Add(arrItem.ToString());
+            try {
+                // Convert Input to array of integers
+                string ValueText = numericUpDown1.Text;
+                int arrItem = Convert.ToInt32(ValueText);
 
-            // Clear the Input
-            numericUpDown1.Text = string.Empty;
+                // Add items to listBox1
+                listBox1.Items.Add(arrItem.ToString());
+
+                // Clear the Input
+                numericUpDown1.Text = string.Empty;
+            }
+
+            catch (Exception exp) {
+                MessageBox.Show(exp.Message);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e) {
@@ -77,9 +87,11 @@ namespace Array_GUI {
                     listArr[i] = Convert.ToInt32(listBox1.Items[i]);
                 }
 
-                // Output the array to the TextBox in Form1 window
+                // Output the array to the TextBox1-Form1
                 TextBox myForm1TextBox = (ParentForm.Controls["textBox1"] as TextBox);
                 myForm1TextBox.Text = string.Join(",", listArr);
+
+                // Clear numericUpDown1
                 numericUpDown1.Text = string.Empty;
 
                 // Clear the listBox

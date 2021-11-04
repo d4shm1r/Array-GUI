@@ -67,7 +67,8 @@ namespace Array_GUI {
 
         private void button1_Click(object sender, EventArgs e) {          
             try {
-                // Get current array as string and convert to int array again
+                // Get current array of int from TextBox1-Form1
+                // as string and convert to int of array again
                 TextBox myForm1TextBox = (ParentForm.Controls["textBox1"] as TextBox);
                 int[] ExcistArr = myForm1TextBox.Text.Split(',').Select(int.Parse).ToArray();
 
@@ -95,9 +96,12 @@ namespace Array_GUI {
 
         private void button2_Click(object sender, EventArgs e) {
             try {
-                // Get current array as string and convert to int again
+                // Get current array of int from TextBox1-Form1
+                // as string and convert to int of array again
                 TextBox myForm1TextBox = (ParentForm.Controls["textBox1"] as TextBox);
                 int[] ExcistArr = myForm1TextBox.Text.Split(',').Select(int.Parse).ToArray();
+
+
                 int nPosition = Convert.ToInt32(numericUpDown2.Value);
 
                 // Split ExcistArr into two Smaller arrays
@@ -129,7 +133,8 @@ namespace Array_GUI {
 
         private void button3_Click(object sender, EventArgs e) {
             try {
-                // Get current array as string and convert to int again
+                // Get current array of int from TextBox1-Form1
+                // as string and convert to int of array again
                 TextBox myForm1TextBox = (ParentForm.Controls["textBox1"] as TextBox);
                 int[] ExcistArr = myForm1TextBox.Text.Split(',').Select(int.Parse).ToArray();
 
