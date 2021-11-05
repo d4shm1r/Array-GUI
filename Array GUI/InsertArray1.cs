@@ -72,15 +72,15 @@ namespace Array_GUI {
                 TextBox myForm1TextBox = (ParentForm.Controls["textBox1"] as TextBox);
                 int[] ExcistArr = myForm1TextBox.Text.Split(',').Select(int.Parse).ToArray();
 
-                // Convert the Input to a single object array
+                // Convert the Input to a single item array
                 int val = Convert.ToInt32(numericUpDown1.Value);
                 int[] NewArr = new int[1];
                 NewArr[0] = val;
 
-                // Create array with size textBox1 + numericUpDown1 values
+                // Create array with size textBox1 + numericUpDown1 value
                 int[] ModifiedArr = new int[NewArr.Length + ExcistArr.Length];
 
-                // Insert the first object to arr[0] the rest will be added at arr[NewArr.Length]
+                // Insert the first array from arr[0] the rest will be added from arr[NewArr.Length]
                 NewArr.CopyTo(ModifiedArr, 0);
                 ExcistArr.CopyTo(ModifiedArr, NewArr.Length);
 
@@ -101,7 +101,7 @@ namespace Array_GUI {
                 TextBox myForm1TextBox = (ParentForm.Controls["textBox1"] as TextBox);
                 int[] ExcistArr = myForm1TextBox.Text.Split(',').Select(int.Parse).ToArray();
 
-
+                // Position to insert array
                 int nPosition = Convert.ToInt32(numericUpDown2.Value);
 
                 // Split ExcistArr into two Smaller arrays
@@ -138,12 +138,12 @@ namespace Array_GUI {
                 TextBox myForm1TextBox = (ParentForm.Controls["textBox1"] as TextBox);
                 int[] ExcistArr = myForm1TextBox.Text.Split(',').Select(int.Parse).ToArray();
 
-                // Convert the Input to a single object array
+                // Convert the Input to a single item array
                 int val = Convert.ToInt32(numericUpDown4.Value);
                 int[] NewArr = new int[1];
                 NewArr[0] = val;
 
-                // Create array with size textBox1 + numericUpDown4 values
+                // Create array with size textBox1 + numericUpDown4 value
                 int[] ModifiedArr = new int[NewArr.Length + ExcistArr.Length];
 
                 // Insert the first item to arr[0] the rest will be added at arr[ExcistArr.Length]

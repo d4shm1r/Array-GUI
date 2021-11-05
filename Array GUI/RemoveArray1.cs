@@ -44,49 +44,20 @@ namespace Array_GUI {
                 // Get value from numericUpDown1
                 int val = Convert.ToInt32(numericUpDown1.Value);
 
-                // ExcistArr = ExcistArr.Where(valParam => valParam != val).ToArray();
-
-                /*
-                 * Method 1
-                 * Removing last item array of first sub array
-                 * newArr = newArr.Take(newArr.Length - 1).ToArray();
-                 * 
-                 * 
-                 * Method 2
-                 * Removing first array item of lasr sub array
-                 * restOfArr = restOfArr.Skip(1).ToArray();
-                 */
-
-                //newArr.CopyTo(ExcistArr, 0);
-                //restOfArr.CopyTo(ExcistArr, val);
-
-                //int[] newArr = ExcistArr.Take(val).ToArray();
-                //int[] restOfArr = ExcistArr.Skip(val).ToArray();
-                //newArr = newArr.Take(newArr.Length - 1).ToArray();
-                //restOfArr = restOfArr.Skip(1).ToArray();
-                //newArr.CopyTo(ExcistArr, 0);
-                //restOfArr.CopyTo(ExcistArr, val);
-
-
-                //int[] leftArr = new int[val];
-                //int[] rightArr = new int[ExcistArr.Length - val];
-                //leftArr = ExcistArr.Take(val - 1).ToArray();
-                //rightArr = ExcistArr.Skip(val).ToArray();
-
-                //leftArr.CopyTo(ExcistArr, 0);
-                //rightArr.CopyTo(ExcistArr, val);
-
+                // Divide ExcistArr into two sub arrays
                 int[] FirstArr = ExcistArr.Take(val).ToArray();
                 int[] SecondArr = ExcistArr.Skip(val).ToArray();
 
-                // Method 1 Remove first item of SecondArr
+                // Method 1: Remove first item of SecondArr
                 SecondArr = SecondArr.Skip(1).ToArray();
 
-                // Method 2 Remove last item of FirstArr
+                // Method 2: Remove last item of FirstArr
                 // FirstArr = FirstArr.Take(FirstArr.Length - 1).ToArray();
 
+                // New array with size of FirstArr + SecondArr items
                 int[] NewArr = new int[FirstArr.Length + SecondArr.Length];
 
+                // Join two subArrays into one array NewArr
                 FirstArr.CopyTo(NewArr, 0);
                 SecondArr.CopyTo(NewArr, val);
 
@@ -97,7 +68,6 @@ namespace Array_GUI {
             catch (Exception exp) {
                 MessageBox.Show(exp.Message);
             }
-
         }
 
         private void button3_Click(object sender, EventArgs e) {
