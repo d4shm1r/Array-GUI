@@ -1,121 +1,101 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Array_GUI {
     public partial class sortArray1 : UserControl {
-        bool btn1Click = false;
-        bool btn2Click = false;
         public sortArray1() {
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
-            // Sort Algortithms Choose one
-            // Sort Methods From Smallest to largest or vice versa
-            // TODO button1 button2 and sorting methods
-
-
-            var selektedItem = comboBox1.SelectedItem;
-            label2.Text = selektedItem.ToString();
-
-            TextBox myForm1TextBox = (ParentForm.Controls["textBox1"] as TextBox);
-            int[] arrToBeSorted = myForm1TextBox.Text.Split(',').Select(int.Parse).ToArray();
-
-            if (selektedItem.ToString() == "Bubble Sort") {
-                BubbleSort(arrToBeSorted);
-            }
-
-            switch (selektedItem.ToString()) {
-                case "Bubble Sort":
-                    BubbleSort(arrToBeSorted);
-                    break;
-                case "Merge Sort":
-                    MergeSort(arrToBeSorted);
-                    break;
-                case "Quick Sort":
-                    QuickSort();
-                    break;
-                case "Insertion Sort":
-                    InsertionSort();
-                    break;
-                case "Selection Sort":
-                    SelectionSort();
-                    break;
-            }
-
-            myForm1TextBox.Text = string.Join(",", arrToBeSorted);
-        }
-
-        public void BubbleSort(int[] arr) {
-            int tempMemory;
-
-            for (int i = 1; i <= arr.Length - 2; i++) {
-                for (int j = 0; j <= arr.Length - 2; j++) {
-                    if (arr[j] > arr[j + 1]) {
-                        tempMemory = arr[j + 1];
-                        arr[j + 1] = arr[j];
-                        arr[j] = tempMemory;
-                    }
-                }
-            }
-        }
-        public void InverseBubbleSort(int[] arr) {
-            int tempMemory;
-
-            for (int i = 1; i <= arr.Length - 2; i++) {
-                for (int j = 0; j <= arr.Length - 2; j++) {
-                    if (arr[j] < arr[j + 1]) {
-                        tempMemory = arr[j + 1];
-                        arr[j + 1] = arr[j];
-                        arr[j] = tempMemory;
-                    }
-                }
-            }
-        }
-
-        public void MergeSort(int[] arr) {
-
-        }
-
-        public void QuickSort() {
-
-        }
-
-        public void InsertionSort() {
-
-        }
-
-        public void SelectionSort() {
-
-        }
-
         private void button1_Click(object sender, EventArgs e) {
-            // This increases the array
-            btn1Click = true;
-            btn2Click = false;
+            try {
+                // This increases the array
 
-            TextBox myForm1TextBox = (ParentForm.Controls["textBox1"] as TextBox);
-            int[] arrToBeSorted = myForm1TextBox.Text.Split(',').Select(int.Parse).ToArray();
+                // Get current array of int from TextBox1-Form1
+                // as string and convert to int of array again
+                TextBox myForm1TextBox = (ParentForm.Controls["textBox1"] as TextBox);
+                int[] arrToBeSorted = myForm1TextBox.Text.Split(',').Select(int.Parse).ToArray();
 
-            var strItem = comboBox1.SelectedItem;
-            if (btn1Click && (strItem.ToString() == "Bubble Sort")) {
-                BubbleSort(arrToBeSorted);
-            } else {
-                InverseBubbleSort(arrToBeSorted);
+                // Declare object s to access Class Sorting
+                Sorting s = new Sorting();
+
+                // Combobox items that will be used to switch statement
+                var strItem = comboBox1.SelectedItem.ToString();
+
+
+                switch (strItem) {
+                    case "Bubble Sort":
+                        s.BubbleSort(arrToBeSorted);
+                        break;
+                    case "Merge Sort":
+                        s.MergeSort();
+                        break;
+                    case "Quick Sort":
+                        s.QuickSort();
+                        break;
+                    case "Insertion Sort":
+                        s.InsertionSort();
+                        break;
+                    case "Selection Sort":
+                        s.SelectionSort();
+                        break;
+                }
+
+                // Output the sorted array
+                myForm1TextBox.Text = string.Join(",", arrToBeSorted).ToString();
+            }
+
+            catch (Exception exp) {
+                MessageBox.Show(exp.Message);
             }
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            // This decreases the array
-            btn1Click = false;
-            btn2Click = true;
+            try {
+                // This decreases the array
+
+                // Get current array of int from TextBox1-Form1
+                // as string and convert to int of array again
+                TextBox myForm1TextBox = (ParentForm.Controls["textBox1"] as TextBox);
+                int[] arrToBeSorted = myForm1TextBox.Text.Split(',').Select(int.Parse).ToArray();
+
+                // Declare object s to access Class Sorting
+                Sorting s = new Sorting();
+
+                // Combobox items that will be used to switch statement
+                var strItem = comboBox1.SelectedItem.ToString();
+
+                switch (strItem) {
+                    case "Bubble Sort":
+                        s.InverseBubbleSort(arrToBeSorted);
+                        break;
+                    case "Merge Sort":
+                        s.InverseMergeSort();
+                        break;
+                    case "Quick Sort":
+                        s.InverseQuickSort();
+                        break;
+                    case "Insertion Sort":
+                        s.InverseInsertionSort();
+                        break;
+                    case "Selection Sort":
+                        s.InverseSelectionSort();
+                        break;
+                }
+
+                // Output the sorted array
+                myForm1TextBox.Text = string.Join(",", arrToBeSorted).ToString();
+            }
+
+            catch (Exception exp) {
+                MessageBox.Show(exp.Message);
+            }
+        }
+
+        private void sortArray1_Load(object sender, EventArgs e) {
+
         }
     }
 }

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Array_GUI {
@@ -126,7 +121,7 @@ namespace Array_GUI {
                 numericUpDown3.ResetText();
             }
 
-            catch(Exception exp) {
+            catch (Exception exp) {
                 MessageBox.Show(exp.Message);
             }
         }
@@ -156,7 +151,7 @@ namespace Array_GUI {
                 numericUpDown4.ResetText();
             }
 
-            catch(Exception exp) {
+            catch (Exception exp) {
                 MessageBox.Show(exp.Message);
             }
         }

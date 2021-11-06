@@ -78,6 +78,7 @@
     <Compile Include="sortArray1.Designer.cs">
       <DependentUpon>sortArray1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sorting.cs" />
     <EmbeddedResource Include="CreateArray1.resx">
       <DependentUpon>CreateArray1.cs</DependentUpon>
     </EmbeddedResource>

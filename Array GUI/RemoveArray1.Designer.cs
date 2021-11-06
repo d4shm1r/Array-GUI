@@ -145,6 +145,7 @@ namespace Array_GUI {
             this.Controls.Add(this.button1);
             this.Name = "RemoveArray1";
             this.Size = new System.Drawing.Size(596, 359);
+            this.Load += new System.EventHandler(this.RemoveArray1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

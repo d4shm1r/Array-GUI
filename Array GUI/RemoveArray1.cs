@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Array_GUI {
@@ -28,7 +23,7 @@ namespace Array_GUI {
                 myForm1TextBox.Text = string.Join(",", ExcistArr);
             } 
 
-            catch(Exception exp) {
+            catch (Exception exp) {
                 MessageBox.Show(exp.Message);
             }
         }
@@ -93,6 +88,10 @@ namespace Array_GUI {
             // Clear textBox1 from the current array
             TextBox myForm1TextBox = (Parent.Controls["textBox1"] as TextBox);
             myForm1TextBox.Text = String.Empty;
+        }
+
+        private void RemoveArray1_Load(object sender, EventArgs e) {
+
         }
     }
 }
