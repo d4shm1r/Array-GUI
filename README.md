@@ -3,13 +3,13 @@
 To get this repo into your local machine there are several ways. For me the easiest method is with CLI(Command Line Interface). Must mention there are some prerequises that you will need.
 
 ### Check if git is installed
-1. Windows > Search _cmd_ > Type _git --version_.
+1. Windows > Search _cmd_ > Type **git --version**.
 2. You should see the version of git. If not then consider Downloading [here](https://git-scm.com/downloads).
 
 ### Clone into VS Code
 1. Open VS Code.
 2. Press _Ctrl + Shift + P_.
-3. Type _Git: Clone_ and press Enter
+3. Type **Git: Clone** and press Enter
 4. Copy this link.
 `https://github.com/d4shm1r/Array-GUI.git`
 5. Paste into the command palette.
